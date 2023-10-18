@@ -23,3 +23,14 @@ class Animal {
     console.log(this.color)
   }
 }
+
+// Cat class will inherit from Animal, with additional sound, canJumpHigh and canClimbTrees properties, specific to Cat class. And its own makeSound() method.
+class Cat extends Animal {
+  constructor(sound = "prr", canJumpHigh = true, canClimbTrees = true, color, energy) {
+    super(color, energy)
+    this.sound = sound
+    this.canJumpHigh = canJumpHigh
+    this.canClimbTrees = canClimbTrees
+  }
+  makeSound() { console.log(this.sound) }
+}
