@@ -67,3 +67,21 @@ class HouseCat extends Cat {
     option ? super.makeSound() : console.log(this.houseCatSound)
   }
 }
+
+// The tiger class will also inherit from Cat class and it will have its own tigerSound property, while the rest behavior will be the same as HouseCat
+class Tiger extends Cat {
+  constructor(
+    tigerSound = "Roar!",
+    sound,
+    canJumpHigh,
+    canClimbTrees,
+    color,
+    energy
+  ) {
+    super(sound, canJumpHigh, canClimbTrees, color, energy)
+    this.tigerSound = tigerSound
+  }
+  makeSound(option = false) {
+    option ? super.makeSound() : console.log(this.tigerSound)
+  }
+}
