@@ -100,3 +100,16 @@ class Parrot extends Bird {
     }
   }
 }
+
+// Tests for Parrot
+const polly = new Parrot(true)
+const fiji = new Parrot(false)
+polly.makeSound()
+fiji.makeSound()
+polly.color = "blue"
+polly.getColor()
+fiji.isActive()
+
+const penguin = new Bird("shierk", false, "black and white", 200)
+penguin.makeSound()
+penguin.sleep()
