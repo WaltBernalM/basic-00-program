@@ -85,3 +85,18 @@ class Tiger extends Cat {
     option ? super.makeSound() : console.log(this.tigerSound)
   }
 }
+
+// The Parrot class will inherit from Bird class, with a property canTalk and its own makeSound() method with two conditionals to work if option is true and if this.canTalk is true
+class Parrot extends Bird {
+  constructor(canTalk = false, sound, canFly, color, energy) {
+    super(sound, canFly, color, energy)
+    this.canTalk = canTalk
+  }
+  makeSound() {
+    if (this.canTalk) {
+      console.log("I'm a talking parrot!")
+    } else {
+      super.makeSound()
+    }
+  }
+}
