@@ -32,5 +32,38 @@ class Cat extends Animal {
     this.canJumpHigh = canJumpHigh
     this.canClimbTrees = canClimbTrees
   }
-  makeSound() { console.log(this.sound) }
+  makeSound() {
+    console.log(this.sound)
+  }
+}
+
+// Bird class will also inherit from Animal, but with its own specific properties, it will have sound and canFly, also the makeSound method.
+class Bird extends Animal {
+  constructor(sound = "chirp", canfly = true, color, energy) {
+    super(color, energy)
+    this.sound = sound
+    this.canfly = canfly
+  }
+  makeSound() {
+    console.log(this.sound)
+  }
+}
+
+// The HouseCat will extend the Cat class, it will have its own houseCatSound, also will override makeSound() method.
+// The makeSound() will have a option as argument, if true, will perform the parent class method, if false, will display the houseCatSound
+class HouseCat extends Cat {
+  constructor(
+    houseCatSound = "meow",
+    sound,
+    canJumpHigh,
+    canClimbTrees,
+    color,
+    energy
+  ) {
+    super(sound, canJumpHigh, canClimbTrees, color, energy)
+    this.houseCatSound = houseCatSound
+  }
+  makeSound(option = false) {
+    option ? super.makeSound() : console.log(this.houseCatSound)
+  }
 }
